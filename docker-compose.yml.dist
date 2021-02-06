@@ -1,0 +1,22 @@
+version: '3.7'
+services:
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: 'customer_api'
+    restart: 'on-failure'
+    tty: true
+    volumes:
+      - .:/var/www
+      - ./000-default.conf:/etc/apache2/sites-enabled/000-default.conf
+    networks:
+      customer-api:
+        ipv4_address: 10.25.0.10
+networks:
+  customer-api:
+    name: customer-api
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.25.0.0/16

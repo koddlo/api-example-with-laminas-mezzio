@@ -9,5 +9,8 @@
     <testsuite name="ApiTest">
       <directory>./src/Api/test</directory>
     </testsuite>
+    <testsuite name="AuthTest">
+      <directory>./src/Auth/test</directory>
+    </testsuite>
   </testsuites>
 </phpunit>

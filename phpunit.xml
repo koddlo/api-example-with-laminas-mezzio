@@ -12,5 +12,8 @@
     <testsuite name="AuthTest">
       <directory>./src/Auth/test</directory>
     </testsuite>
+    <testsuite name="StoreTest">
+      <directory>./src/Store/test</directory>
+    </testsuite>
   </testsuites>
 </phpunit>

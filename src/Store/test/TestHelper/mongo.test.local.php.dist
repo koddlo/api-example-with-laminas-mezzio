@@ -1,0 +1,12 @@
+<?php
+
+declare(strict_types=1);
+
+return [
+    'testMongo' => [
+        'server' => ':ip',
+        'port' => ':port',
+        'dbname' => ':dbname',
+        'options' => []
+    ]
+];

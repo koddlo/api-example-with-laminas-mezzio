@@ -6,6 +6,9 @@ RUN apt-get update \
   && a2enmod rewrite ssl \
   && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
+RUN pecl install mongodb \
+  && docker-php-ext-enable mongodb
+
 RUN mkdir /etc/apache2/ssl \
  && openssl req \
               -new \

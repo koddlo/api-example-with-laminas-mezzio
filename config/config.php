@@ -21,6 +21,7 @@ $aggregator = new ConfigAggregator([
     Mezzio\Router\ConfigProvider::class,
     Laminas\Diactoros\ConfigProvider::class,
     Auth\ConfigProvider::class,
+    Store\ConfigProvider::class,
     Api\ConfigProvider::class,
     new PhpFileProvider(realpath(__DIR__) . '/autoload/{{,*.}global,{,*.}local}.php'),
     new PhpFileProvider(realpath(__DIR__) . '/development.config.php'),

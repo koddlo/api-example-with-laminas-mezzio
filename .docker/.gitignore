@@ -1,0 +1,7 @@
+/*
+
+!.gitignore
+
+!mongo
+mongo/*
+!mongo/.gitkeep

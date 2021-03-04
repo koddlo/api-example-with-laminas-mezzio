@@ -13,6 +13,22 @@ services:
     networks:
       customer-api:
         ipv4_address: 10.25.0.10
+  mongodb:
+    image: mongo:4.4
+    container_name: 'customer_api_mongo'
+    environment:
+      - MONGO_DATA_DIR=/data/db
+      - MONGO_DATA_LOG=/var/log/mongo
+      - MONGO_INITDB_DATABASE=customer_api
+      - MONGO_NON_ROOT_USERNAME=customerapi
+      - MONGO_NON_ROOT_PASSWORD=customerapi
+    volumes:
+      - ./.docker/mongo:/data/db
+    networks:
+      customer-api:
+        aliases:
+          - mongodb
+        ipv4_address: 10.25.0.20
 networks:
   customer-api:
     name: customer-api

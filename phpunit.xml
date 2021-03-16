@@ -6,8 +6,8 @@
     </include>
   </coverage>
   <testsuites>
-    <testsuite name="ApiTest">
-      <directory>./src/Api/test</directory>
+    <testsuite name="CustomerTest">
+      <directory>./src/Customer/test</directory>
     </testsuite>
     <testsuite name="AuthTest">
       <directory>./src/Auth/test</directory>

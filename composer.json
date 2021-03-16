@@ -39,7 +39,8 @@
         "mezzio/mezzio-authentication-basic": "^1.1",
         "mezzio/mezzio-fastroute": "^3.0.3",
         "mezzio/mezzio-helpers": "^5.3",
-        "mongodb/mongodb": "^1.8"
+        "mongodb/mongodb": "^1.8",
+        "ramsey/uuid": "^4.1"
     },
     "require-dev": {
         "laminas/laminas-development-mode": "^3.2",
@@ -51,14 +52,14 @@
     },
     "autoload": {
         "psr-4": {
-            "Api\\": "src/Api/src",
+            "Customer\\": "src/Customer/src",
             "Auth\\": "src/Auth/src",
             "Store\\": "src/Store/src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "ApiTest\\": "src/Api/test",
+            "CustomerTest\\": "src/Customer/test",
             "AuthTest\\": "src/Auth/test",
             "StoreTest\\": "src/Store/test"
         }

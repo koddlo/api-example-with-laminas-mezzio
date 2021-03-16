@@ -22,7 +22,7 @@ $aggregator = new ConfigAggregator([
     Laminas\Diactoros\ConfigProvider::class,
     Auth\ConfigProvider::class,
     Store\ConfigProvider::class,
-    Api\ConfigProvider::class,
+    Customer\ConfigProvider::class,
     new PhpFileProvider(realpath(__DIR__) . '/autoload/{{,*.}global,{,*.}local}.php'),
     new PhpFileProvider(realpath(__DIR__) . '/development.config.php'),
 ], $cacheConfig['config_cache_path']);

@@ -2,9 +2,12 @@
 
 declare(strict_types=1);
 
+use Auth\Middleware\IpAccessControlMiddleware;
 use Laminas\Stratigility\Middleware\ErrorHandler;
 use Mezzio\Application;
+use Mezzio\Authentication\AuthenticationMiddleware;
 use Mezzio\Handler\NotFoundHandler;
+use Mezzio\Helper\BodyParams\BodyParamsMiddleware;
 use Mezzio\Helper\ServerUrlMiddleware;
 use Mezzio\Helper\UrlHelperMiddleware;
 use Mezzio\MiddlewareFactory;
@@ -19,12 +22,15 @@ return function (Application $app, MiddlewareFactory $factory, ContainerInterfac
     $app->pipe(ErrorHandler::class);
 
     $app->pipe(ServerUrlMiddleware::class);
+    $app->pipe('/api/v1', AuthenticationMiddleware::class);
+    $app->pipe('/api/v1', IpAccessControlMiddleware::class);
     $app->pipe(RouteMiddleware::class);
 
     $app->pipe(ImplicitHeadMiddleware::class);
     $app->pipe(ImplicitOptionsMiddleware::class);
     $app->pipe(MethodNotAllowedMiddleware::class);
 
+    $app->pipe(BodyParamsMiddleware::class);
     $app->pipe(UrlHelperMiddleware::class);
 
     $app->pipe(DispatchMiddleware::class);

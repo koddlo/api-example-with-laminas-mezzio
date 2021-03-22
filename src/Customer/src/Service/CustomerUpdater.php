@@ -23,12 +23,10 @@ class CustomerUpdater
             $customer->setPhoneNumber($changes['phoneNumber']);
         }
 
-        if (array_key_exists('position', $changes)) {
-            $customer->setJob(new Job($changes['position'], $customer->getJobCompany()));
-        }
-
-        if (array_key_exists('company', $changes)) {
-            $customer->setJob(new Job($customer->getJobPosition(), $changes['company']));
+        $jobPosition = $changes['position'] ?? $customer->getJobPosition() ?? null;
+        $jobCompany = $changes['company'] ?? $customer->getJobCompany() ?? null;
+        if (!empty($jobPosition) && !empty($jobCompany)) {
+            $customer->setJob(new Job($jobPosition, $jobCompany));
         }
     }
 }

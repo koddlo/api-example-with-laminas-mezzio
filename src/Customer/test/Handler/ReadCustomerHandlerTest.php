@@ -38,7 +38,7 @@ class ReadCustomerHandlerTest extends TestCase
 
         $request
             ->getAttribute('customerId')
-            ->willReturn($testCustomerId->toString());
+            ->willReturn($testCustomerId);
 
         $result = $readCustomerHandler->handle($request->reveal());
 

@@ -11,6 +11,9 @@ $cacheConfig = [
 ];
 
 $aggregator = new ConfigAggregator([
+    Laminas\InputFilter\ConfigProvider::class,
+    Laminas\Filter\ConfigProvider::class,
+    Laminas\Validator\ConfigProvider::class,
     Mezzio\Authentication\Basic\ConfigProvider::class,
     Mezzio\Authentication\ConfigProvider::class,
     Mezzio\Router\FastRouteRouter\ConfigProvider::class,

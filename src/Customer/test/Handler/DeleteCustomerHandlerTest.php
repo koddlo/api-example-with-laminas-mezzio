@@ -11,6 +11,7 @@ use PHPUnit\Framework\TestCase;
 use Prophecy\PhpUnit\ProphecyTrait;
 use Prophecy\Prophecy\ObjectProphecy;
 use Psr\Http\Message\ServerRequestInterface;
+use Ramsey\Uuid\Uuid;
 
 class DeleteCustomerHandlerTest extends TestCase
 {
@@ -25,7 +26,7 @@ class DeleteCustomerHandlerTest extends TestCase
 
         $request
             ->getAttribute('customerId')
-            ->willReturn('75ae6d63-55fa-45df-b346-3be8eb921633');
+            ->willReturn(Uuid::fromString('75ae6d63-55fa-45df-b346-3be8eb921633'));
 
         $result = $deleteCustomerHandler->handle($request->reveal());
 

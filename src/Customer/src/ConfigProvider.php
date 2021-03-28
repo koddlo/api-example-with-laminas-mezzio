@@ -25,6 +25,9 @@ class ConfigProvider
                 Handler\ReadAllCustomerHandler::class => Factory\ReadAllCustomerHandlerFactory::class,
                 Handler\UpdateCustomerHandler::class => Factory\UpdateCustomerHandlerFactory::class,
                 Handler\DeleteCustomerHandler::class => Factory\DeleteCustomerHandlerFactory::class,
+                Middleware\UuidMiddleware::class => Factory\UuidMiddlewareFactory::class,
+                Middleware\CustomerExistenceMiddleware::class => Factory\CustomerExistenceMiddlewareFactory::class,
+                Middleware\CustomerValidationMiddleware::class => Factory\CustomerValidationMiddlewareFactory::class,
                 Repository\CustomerRepository::class => Factory\CustomerRepositoryFactory::class
             ],
             'abstract_factories' => [

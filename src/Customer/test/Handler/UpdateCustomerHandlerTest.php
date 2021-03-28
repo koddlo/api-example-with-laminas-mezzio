@@ -13,6 +13,7 @@ use PHPUnit\Framework\TestCase;
 use Prophecy\PhpUnit\ProphecyTrait;
 use Prophecy\Prophecy\ObjectProphecy;
 use Psr\Http\Message\ServerRequestInterface;
+use Ramsey\Uuid\Uuid;
 
 class UpdateCustomerHandlerTest extends TestCase
 {
@@ -27,7 +28,7 @@ class UpdateCustomerHandlerTest extends TestCase
 
         $request
             ->getAttribute('customerId')
-            ->willReturn('75ae6d63-55fa-45df-b346-3be8eb921633');
+            ->willReturn(Uuid::fromString('75ae6d63-55fa-45df-b346-3be8eb921633'));
 
         $request
             ->getParsedBody()

@@ -9,7 +9,6 @@ use Laminas\Diactoros\Response\JsonResponse;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;
-use Ramsey\Uuid\Uuid;
 
 class ReadCustomerHandler implements RequestHandlerInterface
 {
@@ -22,10 +21,8 @@ class ReadCustomerHandler implements RequestHandlerInterface
 
     public function handle(ServerRequestInterface $request): ResponseInterface
     {
-        $customerId = $request->getAttribute('customerId');
-
         return new JsonResponse(
-            $this->getOneCustomerById->execute(Uuid::fromString($customerId))
+            $this->getOneCustomerById->execute($request->getAttribute('customerId'))
         );
     }
 }

@@ -10,7 +10,6 @@ use Laminas\Diactoros\Response\JsonResponse;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;
-use Ramsey\Uuid\Uuid;
 
 class UpdateCustomerHandler implements RequestHandlerInterface
 {
@@ -26,8 +25,7 @@ class UpdateCustomerHandler implements RequestHandlerInterface
 
     public function handle(ServerRequestInterface $request): ResponseInterface
     {
-        $customerId = $request->getAttribute('customerId');
-        $customer = $this->customerRepository->findOneById(Uuid::fromString($customerId));
+        $customer = $this->customerRepository->findOneById($request->getAttribute('customerId'));
 
         $this->customerUpdater->update($customer, $request->getParsedBody());
 

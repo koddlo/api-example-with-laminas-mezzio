@@ -55,14 +55,16 @@
         "psr-4": {
             "Customer\\": "src/Customer/src",
             "Auth\\": "src/Auth/src",
-            "Store\\": "src/Store/src"
+            "Store\\": "src/Store/src",
+            "Error\\": "src/Error/src"
         }
     },
     "autoload-dev": {
         "psr-4": {
             "CustomerTest\\": "src/Customer/test",
             "AuthTest\\": "src/Auth/test",
-            "StoreTest\\": "src/Store/test"
+            "StoreTest\\": "src/Store/test",
+            "ErrorTest\\": "src/Error/test"
         }
     }
 }

@@ -23,6 +23,7 @@ $aggregator = new ConfigAggregator([
     Mezzio\ConfigProvider::class,
     Mezzio\Router\ConfigProvider::class,
     Laminas\Diactoros\ConfigProvider::class,
+    Error\ConfigProvider::class,
     Auth\ConfigProvider::class,
     Store\ConfigProvider::class,
     Customer\ConfigProvider::class,

@@ -11,6 +11,8 @@ if (PHP_SAPI === 'cli-server' && $_SERVER['SCRIPT_FILENAME'] !== __FILE__) {
 }
 
 chdir(dirname(__DIR__));
+define('APPLICATION_PATH', __DIR__);
+
 require 'vendor/autoload.php';
 
 (function () {

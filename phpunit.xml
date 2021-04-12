@@ -15,5 +15,8 @@
     <testsuite name="StoreTest">
       <directory>./src/Store/test</directory>
     </testsuite>
+    <testsuite name="ErrorTest">
+      <directory>./src/Error/test</directory>
+    </testsuite>
   </testsuites>
 </phpunit>
